@@ -1,199 +1,192 @@
 {{define "styles"}}
-    {{/* Changed /css/home.css to use .Site.BaseURL */}}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/home.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/home.css">
 {{end}}
 {{define "scripts"}}
-    {{/* Changed /js/reveal-section.js to use .Site.BaseURL */}}
-    <script src="{{ .Site.BaseURL }}js/reveal-section.js" defer></script>
+    <script src="{{ .Site.BaseURL }}js/reveal-section.js" defer></script>
 {{end}}
 {{define "main"}}
-    <div class="layout-container" id="hero">
-        <div class="layout-content">
-            <div id="hero-body">
-                <h1 id="hero-call">Zvažuješ <span>vědu?</span></h1>
-                <p id="hero-text">Přijď se inspirovat příběhy svých vrstevníků, kteří už na střední škole mají kus vědecké dráhy za sebou. Staneš se jedním z nich i ty?</p>
-                <div id="hero-row">
-                    {{/* Changed /plzen to use .Site.BaseURL */}}
-                    <a href="{{ .Site.BaseURL }}plzen" class="primary-button">Plzeň</a>
-                    {{/* Changed /brno to use .Site.BaseURL */}}
-                    <a href="{{ .Site.BaseURL }}brno" class="primary-button">Brno</a>
-                    {{/* Changed /praha to use .Site.BaseURL */}}
-                    <a href="{{ .Site.BaseURL }}praha" class="primary-button">Praha</a>
-                </div>
-            </div>
-            <div id="hero-graphics">
-                {{/* Changed /media/imgs/home/hero1.jpg to use .Site.BaseURL */}}
-                <img id="hero-graphics-primary" src="{{ .Site.BaseURL }}media/imgs/home/hero1.jpg">
-                {{/* Changed /media/imgs/home/hero2.jpg to use .Site.BaseURL */}}
-                <img id="hero-graphics-secondary" src="{{ .Site.BaseURL }}media/imgs/home/hero2.jpg">
-                {{/* Changed /favicon/icon.png to use .Site.BaseURL */}}
-                <img id="hero-graphics-icon" src="{{ .Site.BaseURL }}favicon/icon.png">
-                <div id="hero-graphics-circle-1"></div>
-                <div id="hero-graphics-circle-2"></div>
-            </div>
-        </div>
-    </div>
-    <div class="layout-container" id="what">
-        <div class="layout-content">
-            <div class="what-section">
-                {{/* Changed /media/imgs/base/mark-blk.png to use .Site.BaseURL */}}
-                <img src="{{ .Site.BaseURL }}media/imgs/base/mark-blk.png">
-                <h3>{{/* Changed /media/imgs/base/mark-blk.png to use .Site.BaseURL */}}<img src="{{ .Site.BaseURL }}media/imgs/base/mark-blk.png"> Zvaž vědu! je...</h3>
-                <p>Zvaž vědu! je projekt, který se zaměřuje na popularizaci přírodních věd a podporu talentovaných středoškoláků.</p>
-            </div>
-            <div class="what-section">
-                <i class="fa-solid fa-bullseye"></i>
-                <p>Cílem Zvaž vědu! je motivovat mladé lidi k zájmu o vědu, ukázat jim, že věda není jen nudná teorie, ale že může být zábavná a nabídnout spoustu zajímavých příležitostí.</p>
-            </div>
-            <div class="what-section">
-                <i class="fa-solid fa-users"></i>
-                <p>Na našich akcích vystupují středoškoláci, kteří mají už něco za sebou, od soutěží po vlastní vědecké projekty.</p>
-                {{/* Changed /o-nas to use .Site.BaseURL */}}
-                <a href="{{ .Site.BaseURL }}o-nas" class="secondary-button">Více &rarr;</a>
-            </div>
-        </div>
-    </div>
-    <div class="quote-title">
-        <span>Dostáváme vědu mezi</span><span class="quote-title-highlight" id="mlade-lidi">mladé lidi.</span>
-    </div>
-    <div class="layout-container" id="stats">
-        <div class="layout-content bento-board">
-            <div class="bento-board-item bento-row1col1">
-                <strong class="bento-title">{{.Params.events}} akce</strong>
-                <p class="bento-text">v rámci Zvaž vědu!</p>
-            </div>
-            <div class="bento-board-item bento-row1col2">
-                <strong class="bento-title">{{.Params.speakers}} řečníků</strong>
-                {{/* Changed /o-nas/recnici to use .Site.BaseURL */}}
-                <a href="{{ .Site.BaseURL }}o-nas/recnici" class="secondary-button">Více &rarr;</a>
-            </div>
-            <div class="bento-board-item bento-row2col1">
-                <strong class="bento-title">{{.Params.participants}} účastníků</strong>
-                <p class="bento-text">prozatím...</p>
-            </div>
-            <div class="bento-board-item bento-row2col2">
-                <strong class="bento-title">{{.Params.ambasadors}} ambasadorů</strong>
-                {{/* Changed /o-nas/recnici to use .Site.BaseURL (assuming this is the correct target, or maybe meant /zapojte-se/ambasadori?) - Keeping as provided but using BaseURL */}}
-                <a href="{{ .Site.BaseURL }}o-nas/recnici" class="secondary-button">Přidej se &rarr;</a>
-            </div>
-        </div>
-    </div>
-    <div class="quote-title">
-        <span>Od středoškoláků</span><span class="quote-title-highlight" id="pro-stredoskolaky">pro středoškoláky.</span>
-    </div>
-    <div class="layout-container" id="who">
-        <div class="layout-content grid-board">
-            <div class="grid-board-item grid-1-3">
-                <h4>
-                    <span>Kdo jsme?</span>
-                    <button class="reveal-button"><i class="fa-solid fa-chevron-down reveal-button-icon"></i></button>
-                </h4>
-                <div class="grid-board-item-content">
-                    <div class="grid-board-item-content-body">
-                        <p>Tým organizátorů Zvaž vědu! se skládá primárně ze středoškoláků, jsme úplně stejní jako vy! Snažíme se dostat zájem o vědu mezi naše vrstevníky.</p>
-                        <p>Ruzných příležitostí jsme se na střední sami chopili, někteří z nás máme hezké výsledky z různých olympiád nebo jiných vědeckých soutěží a Zvaž vědu! není jediná akce, kterou v rámci této snahy organizujeme.</p>
-                        <strong>Se Zvaž vědu! máme do budoucna velké plány a budeme s tím potřebovat pomoct. Přidáte se?</strong>
-                        {{/* Changed /zapojte-se/pridej-se-k-nam to use .Site.BaseURL */}}
-                        <a href="{{ .Site.BaseURL }}zapojte-se/pridej-se-k-nam" class="secondary-button">Přidej se k nám &rarr;</a>
-                    </div>
-                    {{/* Changed /media/imgs/about/about3.webp to use .Site.BaseURL */}}
-                    <img src="{{ .Site.BaseURL }}media/imgs/about/about3.webp">
-                </div>
-            </div>
-            <div class="grid-board-item grid-2-3">
-                <h4>
-                    <span>Potřebujeme tě!</span>
-                    <button class="reveal-button"><i class="fa-solid fa-chevron-down reveal-button-icon"></i></button>
-                </h4>
-                <div class="grid-board-item-content">
-                    <div class="grid-board-item-content-body">
-                        <p>Akce Zvaž vědu! propagujeme na sociálních sítích. Máme své oficiální účty, ale není nic silnějšího než když jednotlivci rozšíří informace o Zvaž vědu! ve svém okolí. Na to máme celý tým ambasadorů, kteří využívají svých sítí pro propagaci Zvaž vědu!</p>
-                        <strong>Zvaž vědu! čeká zajímavá budoucnost a my chceme rozšířit povědomí o něm mezi co nejvíce mladých lidí. Přidejte se mezi ambasadory a dostávejte nejnovější informace na našem discordu!</strong>
-                        {{/* Changed /zapojte-se/ambasadori to use .Site.BaseURL */}}
-                        <a href="{{ .Site.BaseURL }}zapojte-se/ambasadori" class="secondary-button">Staň se ambasadorem &rarr;</a>
-                    </div>
-                    {{/* Changed /media/imgs/home/what2.webp to use .Site.BaseURL */}}
-                    <img src="{{ .Site.BaseURL }}media/imgs/home/what2.webp">
-                </div>
-            </div>
-            <div class="grid-board-item grid-3-3">
-                <h4>
-                    <span>Podpořte nás!</span>
-                    <button class="reveal-button"><i class="fa-solid fa-chevron-down reveal-button-icon"></i></button>
-                </h4>
-                <div class="grid-board-item-content">
-                    <div class="grid-board-item-content-body">
-                        <p>Realizace Zvaž vědu! by nebyla možná bez podpory našich partnerů. Jakékoliv podpory každého z nich si velice vážíme a spolupracujeme dlouhodobě. Naše partnery na akcích Zvaž vědu! propagujeme, zároveň dáváme prostor pro vystavení baneru a našimi partnery se pyšníme i na našich stránkách.</p>
-                        <strong>Zvaž vědu! rozhodně nekončí a pro projekt máme zajímavé plány. Budeme rádi, když se k našim partnerům přidáta i vy!</strong>
-                        {{/* Changed /zapojte-se/podporte-nas to use .Site.BaseURL */}}
-                        <a href="{{ .Site.BaseURL }}zapojte-se/podporte-nas" class="secondary-button">Podpořte nás &rarr;</a>
-                    </div>
-                    {{/* Changed /media/imgs/home/what3.webp to use .Site.BaseURL */}}
-                    <img src="{{ .Site.BaseURL }}media/imgs/home/what3.webp">
-                </div>
-            </div>
-            <div class="grid-board-item grid-full">
-                <h4>Máš co říct?</h4>
-                {{/* Changed /zapojte-se/recnici to use .Site.BaseURL */}}
-                <a href="{{ .Site.BaseURL }}zapojte-se/recnici" class="secondary-button">Přednášej u nás &rarr;</a>
-            </div>
-        </div>
-    </div>
-    <div class="layout-container" id="cta">
-        <div class="layout-content">
-            <div class="quote-title">
-                <p id="cta-call">Nikdy není příliš brzy na to <span class="quote-title-highlight" id="zacit">začít.</span></p>
-            </div>
-            <div id="cta-map">
-                <svg
-                xmlns:dc="http://purl.org/dc/elements/1.1/"
-                xmlns:cc="http://creativecommons.org/ns#"
-                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                width="500"
-                height="auto"
-                version="1.1"
-                viewBox="0 0 1412 809"
-                id="svg90"
-                sodipodi:docname="map.svg"
-                inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-            >
-                <metadata id="metadata96">
-                    <rdf:RDF>
-                      <cc:Work
-                         rdf:about="">
-                        <dc:format>image/svg+xml</dc:format>
-                        <dc:type
-                           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                        <dc:title></dc:title>
-                    </cc:Work>
-                    </rdf:RDF>
-                </metadata>
-                <defs id="defs94"/>
-                <sodipodi:namedview
-                    pagecolor="#ffffff"
-                    bordercolor="#666666"
-                    borderopacity="1"
-                    objecttolerance="10"
-                    gridtolerance="10"
-                    guidetolerance="10"
-                    inkscape:pageopacity="0"
-                    inkscape:pageshadow="2"
-                    inkscape:window-width="1920"
-                    inkscape:window-height="1017"
-                    id="namedview92"
-                    showgrid="false"
-                    inkscape:zoom="0.27748691"
-                    inkscape:cx="2669"
-                    inkscape:cy="1528"
-                    inkscape:window-x="-8"
-                    inkscape:window-y="-8"
-                    inkscape:window-maximized="1"
-                    inkscape:current-layer="svg90"
-                />
+    <div class="layout-container" id="hero">
+        <div class="layout-content">
+            <div id="hero-body">
+                <h1 id="hero-call">Zvažuješ <span>vědu?</span></h1>
+                <p id="hero-text">Přijď se inspirovat příběhy svých vrstevníků, kteří už na střední škole mají kus vědecké dráhy za sebou. Staneš se jedním z nich i ty?</p>
+                <div id="hero-row">
+                    <a href="{{ .Site.BaseURL }}plzen" class="primary-button">Plzeň</a>
+                    <a href="{{ .Site.BaseURL }}brno" class="primary-button">Brno</a>
+                    <a href="{{ .Site.BaseURL }}praha" class="primary-button">Praha</a>
+                </div>
+            </div>
+            <div id="hero-graphics">
+                <img id="hero-graphics-primary" src="{{ .Site.BaseURL }}media/imgs/home/hero1.jpg">
+                <img id="hero-graphics-secondary" src="{{ .Site.BaseURL }}media/imgs/home/hero2.jpg">
+                <img id="hero-graphics-icon" src="{{ .Site.BaseURL }}favicon/icon.png">
+                <div id="hero-graphics-circle-1"></div>
+                <div id="hero-graphics-circle-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="layout-container" id="what">
+        <div class="layout-content">
+            <div class="what-section">
+                <img src="{{ .Site.BaseURL }}media/imgs/base/mark-blk.png">
+                <h3><img src="{{ .Site.BaseURL }}media/imgs/base/mark-blk.png"> Zvaž vědu! je...</h3>
+                <p>Zvaž vědu! je projekt, který se zaměřuje na popularizaci přírodních věd a podporu talentovaných středoškoláků.</p>
+            </div>
+            <div class="what-section">
+                <i class="fa-solid fa-bullseye"></i>
+                <p>Cílem Zvaž vědu! je motivovat mladé lidi k zájmu o vědu, ukázat jim, že věda není jen nudná teorie, ale že může být zábavná a nabídnout spoustu zajímavých příležitostí.</p>
+            </div>
+            <div class="what-section">
+                <i class="fa-solid fa-users"></i>
+                <p>Na našich akcích vystupují středoškoláci, kteří mají už něco za sebou, od soutěží po vlastní vědecké projekty.</p>
+                <a href="{{ .Site.BaseURL }}o-nas" class="secondary-button">Více &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <div class="quote-title">
+        <span>Dostáváme vědu mezi</span><span class="quote-title-highlight" id="mlade-lidi">mladé lidi.</span>
+    </div>
+    <div class="layout-container" id="stats">
+        <div class="layout-content bento-board">
+            <div class="bento-board-item bento-row1col1">
+                <strong class="bento-title">{{.Params.events}} akce</strong>
+                <p class="bento-text">v rámci Zvaž vědu!</p>
+            </div>
+            <div class="bento-board-item bento-row1col2">
+                <strong class="bento-title">{{.Params.speakers}} řečníků</strong>
+                <a href="{{ .Site.BaseURL }}o-nas/recnici" class="secondary-button">Více &rarr;</a>
+            </div>
+            <div class="bento-board-item bento-row2col1">
+                <strong class="bento-title">{{.Params.participants}} účastníků</strong>
+                <p class="bento-text">prozatím...</p>
+            </div>
+            <div class="bento-board-item bento-row2col2">
+                <strong class="bento-title">{{.Params.ambasadors}} ambasadorů</strong>
+                <a href="{{ .Site.BaseURL }}o-nas/recnici" class="secondary-button">Přidej se &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <div class="quote-title">
+        <span>Od středoškoláků</span><span class="quote-title-highlight" id="pro-stredoskolaky">pro středoškoláky.</span>
+    </div>
+    <div class="layout-container" id="who">
+        <div class="layout-content grid-board">
+            <div class="grid-board-item grid-1-3">
+                <h4>
+                    <span>Kdo jsme?</span>
+                    <button class="reveal-button"><i class="fa-solid fa-chevron-down reveal-button-icon"></i></button>
+                </h4>
+                <div class="grid-board-item-content">
+                    <div class="grid-board-item-content-body">
+                        <p>Tým organizátorů Zvaž vědu! se skládá primárně ze středoškoláků, jsme úplně stejní jako vy! Snažíme se dostat zájem o vědu mezi naše vrstevníky.</p>
+                        <p>Ruzných příležitostí jsme se na střední sami chopili, někteří z nás máme hezké výsledky z různých olympiád nebo jiných vědeckých soutěží a Zvaž vědu! není jediná akce, kterou v rámci této snahy organizujeme.</p>
+                        <strong>Se Zvaž vědu! máme do budoucna velké plány a budeme s tím potřebovat pomoct. Přidáte se?</strong>
+                        <a href="{{ .Site.BaseURL }}zapojte-se/pridej-se-k-nam" class="secondary-button">Přidej se k nám &rarr;</a>
+                    </div>
+                    <img src="{{ .Site.BaseURL }}media/imgs/about/about3.webp">
+                </div>
+            </div>
+            <div class="grid-board-item grid-2-3">
+                <h4>
+                    <span>Potřebujeme tě!</span>
+                    <button class="reveal-button"><i class="fa-solid fa-chevron-down reveal-button-icon"></i></button>
+                </h4>
+                <div class="grid-board-item-content">
+                    <div class="grid-board-item-content-body">
+                        <p>Akce Zvaž vědu! propagujeme na sociálních sítích. Máme své oficiální účty, ale není nic silnějšího než když jednotlivci rozšíří informace o Zvaž vědu! ve svém okolí. Na to máme celý tým ambasadorů, kteří využívají svých sítí pro propagaci Zvaž vědu!</p>
+                        <strong>Zvaž vědu! čeká zajímavá budoucnost a my chceme rozšířit povědomí o něm mezi co nejvíce mladých lidí. Přidejte se mezi ambasadory a dostávejte nejnovější informace na našem discordu!</strong>
+                        <a href="{{ .Site.BaseURL }}zapojte-se/ambasadori" class="secondary-button">Staň se ambasadorem &rarr;</a>
+                    </div>
+                    <img src="{{ .Site.BaseURL }}media/imgs/home/what2.webp">
+                </div>
+            </div>
+            <div class="grid-board-item grid-3-3">
+                <h4>
+                    <span>Podpořte nás!</span>
+                    <button class="reveal-button"><i class="fa-solid fa-chevron-down reveal-button-icon"></i></button>
+                </h4>
+                <div class="grid-board-item-content">
+                    <div class="grid-board-item-content-body">
+                        <p>Realizace Zvaž vědu! by nebyla možná bez podpory našich partnerů. Jakékoliv podpory každého z nich si velice vážíme a spolupracujeme dlouhodobě. Naše partnery na akcích Zvaž vědu! propagujeme, zároveň dáváme prostor pro vystavení baneru a našimi partnery se pyšníme i na našich stránkách.</p>
+                        <strong>Zvaž vědu! rozhodně nekončí a pro projekt máme zajímavé plány. Budeme rádi, když se k našim partnerům přidáta i vy!</strong>
+                        <a href="{{ .Site.BaseURL }}zapojte-se/podporte-nas" class="secondary-button">Podpořte nás &rarr;</a>
+                    </div>
+                    <img src="{{ .Site.BaseURL }}media/imgs/home/what3.webp">
+                </div>
+            </div>
+            <div class="grid-board-item grid-full">
+                <h4>Máš co říct?</h4>
+                <a href="{{ .Site.BaseURL }}zapojte-se/recnici" class="secondary-button">Přednášej u nás &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <div class="layout-container" id="cta">
+        <div class="layout-content">
+            <div class="quote-title">
+                <p id="cta-call">Nikdy není příliš brzy na to <span class="quote-title-highlight" id="zacit">začít.</span></p>
+            </div>
+            <div id="cta-map">
+                <svg
+                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:cc="http://creativecommons.org/ns#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                width="500"
+                height="auto"
+                version="1.1"
+                viewBox="0 0 1412 809"
+                id="svg90"
+                sodipodi:docname="map.svg"
+                inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+            >
+                <metadata id="metadata96">
+                    <rdf:RDF>
+                      <cc:Work
+                         rdf:about="">
+                        <dc:format>image/svg+xml</dc:format>
+                        <dc:type
+                           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                        <dc:title></dc:title>
+                      </cc:Work>
+                    </rdf:RDF>
+                </metadata>
+                <defs id="defs94"/>
+                <sodipodi:namedview
+                    pagecolor="#ffffff"
+                    bordercolor="#666666"
+                    borderopacity="1"
+                    objecttolerance="10"
+                    gridtolerance="10"
+                    guidetolerance="10"
+                    inkscape:pageopacity="0"
+                    inkscape:pageshadow="2"
+                    inkscape:window-width="1920"
+                    inkscape:window-height="1017"
+                    id="namedview92"
+                    showgrid="false"
+                    inkscape:zoom="0.27748691"
+                    inkscape:cx="2669"
+                    inkscape:cy="1528"
+                    inkscape:window-x="-8"
+                    inkscape:window-y="-8"
+                    inkscape:window-maximized="1"
+                    inkscape:current-layer="svg90" 
+                />
+                <path
+                    d="m1101.7 244.45c-.3035 4.7331 2.4371 10.845-.9092 14.206-2.4483 2.4595-6.742-4.9558-9.8446-3.4006-3.6682 1.8385-2.3939 8.2903-5.4216 11.059-1.9134 1.7495-5.6335-.56176-7.7266.96943-5.4974 4.0201-10.843 8.8658-13.99 14.911-1.3384 2.5726 2.4777 5.7035 1.795 8.5233-.5387 2.2232-4.7595 2.4302-5.0096 4.7072-.4663 4.2467 4.2413 8.3118 3.123 12.436-1.3153 4.8491-7.1005 7.2578-9.6452 11.594-2.6269 4.4772-6.5741 9.3962-5.6771 14.51.8519 4.8574 9.5773 5.8968 10.118 10.798.4473 4.0534-6.3881 5.5655-7.8934 9.3557-.5231 1.3188 3.2185 1.6873 2.9527 3.0849-.7721 4.0608-6.1669 6.9524-5.6467 11.062.5682 4.4958 4.0837 9.317 8.3995 10.691 3.1177.99242 6.0465-7.8729 8.2027-5.4109 2.897 3.3086-3.5273 9.248-1.45 13.129 1.199 2.2388 4.831-2.8212 7.2988-2.2227 5.5896 1.3551 9.7281 6.9622 15.428 7.7486 2.6998.3729 4.3553-6.0744 6.6998-4.6901 6.7264 3.9736 8.6907 13.636 15.354 17.72 3.38 2.071 7.9766-1.8782 11.85-1.0507 3.0737.65622 4.7199 5.7241 7.8269 5.2645 2.3994-.3543.1708-7.0444 2.5814-6.8031 4.8159.48053 7.1354 7.729 11.944 8.2556 3.5685.39053 5.3962-6.2017 8.9763-5.9609 5.385.36213 11.69 2.8354 14.342 7.5416 2.2989 4.0793-3.4995 9.3468-2.2761 13.871.8755 3.2367 4.4199 6.0926 7.7587 6.4033 2.282.21238 2.5761-6.6148 4.4274-5.2661 4.3415 3.1618 4.1258 10.168 7.7481 14.133 1.8752 2.0534 5.6844 1.1334 7.8235 2.9068 4.3323 3.5924 9.1085 7.4809 11.069 12.757.8099 2.1791-3.8895 3.245-4.2536 5.546-.2677 1.6932.9719 4.5775 2.6817 4.4013 3.7436-.38613 6.1249-6.6451 9.757-5.6786 3.1637.84217 2.3131 6.1332 3.47 9.201-1.1989 3.0453-.5143 8.0432-3.5973 9.1349-3.8356 1.3585-7.6561-4.5922-11.635-3.7344-2.0822.44778.8857 4.8266-.5858 6.371-2.71 2.8471-8.3045 2.0828-10.532 5.3218-1.2191 1.775 3.2929 3.6693 2.8901 5.7828-.3797 2.0025-3.837 2.0549-4.7292 3.8895-.7056 1.451.3235 3.2142.4821 4.8246-4.0035.82896-8.0907 3.6452-12.011 2.4874-3.1872-.94249-3.5195-5.8263-6.1532-7.8494-.9185-.70517-2.783-.48154-3.4461.46636-1.4715 2.1028.2701 6.3764-2.0759 7.4231-2.7067 1.2087-7.5425-5.5298-8.4787-2.715-1.2831 3.8645 5.3208 6.7107 5.8132 10.753.2559 2.0945-1.8307 4.6113-3.9081 4.9852-8.7185 1.5738-18.066-1.932-26.583.51728-2.1992.63127 3.2758 4.277 2.4649 6.419-1.4524 3.8444-4.2437 8.6989-8.3387 9.1051-3.128.31073-2.4194-6.7214-5.3909-7.7491-4.9494-1.7157-11.2 3.0898-15.719.43598-3.0429-1.7876 2.113-10.217-1.406-10.504-4.0499-.33229-6.8912 5.7471-7.2709 9.7946-.4326 4.6259 5.9883 8.3994 5.129 12.965-.5686 3.0115-6.2056 1.7147-8.3192 3.9374-2.8911 3.0369-2.7419 8.4087-5.977 11.082-1.6154 1.333-4.1396-.67683-6.2086-1.0149-4.4508.85686-12.171-1.7994-13.351 2.573l-2.5217 9.3522c-.3836 1.4216-2.5095-1.5494-3.7646-2.3206-1.6536-5.477-.8966-12.407-4.9627-16.425-5.427-5.361-16.259-3.1897-20.964-9.1912-2.7669-3.5293 3.4045-8.4939 3.5787-12.972.062-1.5885-1.5033-4.4894-2.9245-3.7769-2.2828 1.1446-.9312 7.8274-3.3183 6.9132-3.1951-1.2244-1.4588-6.9847-3.6717-9.594-1.4411-1.699-5.222-.25006-6.3264-2.1865-1.4349-2.5168 1.3854-6.094.1174-8.6989-1.2078-2.4806-5.1135-2.6112-6.7137-4.8589-1.5816-2.2207-.2563-6.0848-2.3424-7.8376-2.2497-1.8889-6.2394-3.0448-8.7-1.4402-3.2093 2.092-6.4185 4.186-9.6282 6.278-2.897 1.8889 6.144 3.5322 8.2972 6.2404 2.182 2.7448 4.2667 6.0985 4.3083 9.6038.02 1.6359-3.5327 1.0996-4.1689 2.6083-.8931 2.1175 1.2489 4.8819.1542 6.9044-1.5259 2.8192-4.1127 6.7107-7.2911 6.2775-5.4877-.74827-10.25-4.968-13.865-9.1658-1.2562-1.4583-.11155-4.1665 1.0736-5.6815 1.2797-1.6364 5.8083-.74925 5.5743-2.8139-.33224-2.9381-5.4461-3.2327-6.5619-5.9663-2.158-5.2827-3.0443-11.201-2.7884-16.902.0583-1.2861 2.9416-.29019 3.6125-1.3854 1.0448-1.7059-.47027-4.4703.88233-5.9443 1.0957-1.1931 6.4361.0313 4.853-.30144-6.6759-1.4055-15.199 1.6232-20.266-2.9484-3.5444-3.1985-2.3851-11.104 1.177-14.282 2.7223-2.4277 6.6367 5.4153 10.089 4.2413 2.7478-.93469 1.4632-5.6194 2.1958-8.4258.37928-3.2136-.11695-6.6612 1.1348-9.6405.3597-.8554 2.4273 2.5907 2.207 1.6912-.86614-3.5415-4.5388-6.4376-4.2589-10.07.17521-2.3103 3.5812-2.9352 5.3712-4.4008 1.0507-4.0779 2.1018-8.1552 3.1525-12.233-1.0639-2.554-.81238-6.2595-3.1946-7.6566-2.4938-1.4637-6.9837 3.0678-8.6559.70469-1.5121-2.1405 5.4916-3.8156 4.6959-6.3108-2.0015-6.2678-8.65-10.059-11.778-15.849-2.6734-4.947-3.6247-10.651-5.4382-15.976.15362-1.47-.39788-3.2063.45752-4.4067 1.4574-2.0426 6.3759-2.1248 5.9614-4.5951-2.3049-13.736-11.812-25.747-13.379-39.584-.34057-2.9866 6.369 2.2212 8.9862.75067 2.3054-1.2958.78687-5.7628 2.8574-7.404 7.5944-6.0211 10.135-5.2597 9.9017-8.4993-.21045-2.9136-4.6309-4.6137-4.4816-7.5288.13261-2.5936 4.9778-3.2455 5.1755-5.8337.21286-2.7776-4.2139-4.4557-4.1841-7.2426.0175-1.6643 3.7084-1.0125 4.2888-2.5687 3.2303-8.6446 4.4767-17.909 6.715-26.861 1.2268.346 2.9626.43799 3.7862-.52702 1.7685-2.0705.72914-6.2433 3.1138-7.5509 3.5406-1.9418 8.5081 1.0717 12.086-.7913 2.208-1.15.3401-7.5377 2.7522-6.9416 3.4837.8603 3.0412 6.7919 5.8234 9.0576 1.0105.82311 3.6374-.002 3.6966-1.3066.3709-8.1156 1.2044-17.03-2.5354-24.241-2.2158-4.2731-10.316-2.0886-13.151-5.9795-4.8829-6.7028-3.7931-16.492-8.2938-23.453-2.1351-3.3017-8.9754-1.8586-10.437-5.5093-1.4681-3.6683 1.5102-7.9835 3.7211-11.253 1.1539-1.7059 3.6786-3.2464 5.6252-2.5726 5.3854 1.8625 8.8242 7.7148 14.249 9.4594 1.8352.59017 2.8085-3.6927 4.7063-3.3654 4.3366.74775 7.4191 5.0267 11.662 6.1949 3.8292 1.0536 8.2457-1.2156 11.916.29754 3.1651 1.3037 3.7142 6.5834 7.0101 7.5063 3.9867 1.1172 8.3886-3.6105 12.248-2.1106 2.0832.80989-1.7989 4.921-.4424 6.7018 4.1616 5.4632 9.202 11.153 15.717 13.332 4.9214 1.6467 11.768-6.7596 15.293-2.9538 4.7258 5.1031-.3288 14.06 1.2684 20.832.4576 1.9393.8163-4.2296 2.349-5.5009 1.3893-1.152 3.5454-.97333 5.3458-.88281 2.2804.11402 5.0649-.1057 6.6862 1.4979 1.7969 1.7774-.3407 7.2578 2.1884 7.268z"
+                    clip-rule="evenodd"
+                    fill="#c9c9c9"
+                    fill-rule="evenodd"
+                    image-rendering="optimizeQuality"
+                    shape-rendering="geometricPrecision"
+                    stroke="#fff"
+                    stroke-linejoin="bevel"
+                    stroke-width="2.5897"
+                    id="ok"
+                />
                 <path
                     d="m1099.5 237.18c1.797 1.7774-.3406 7.2578 2.1885 7.268m-8.8748-8.766c2.2805.11402 5.0651-.1057 6.6863 1.498m-12.032-.61513c1.3895-1.152 3.5456-.97335 5.3458-.88282m-7.6946 6.3838c.4575 1.9394.8162-4.2296 2.3488-5.5009m-3.6172-15.331c4.7257 5.1031-.3289 14.06 1.2684 20.832m-16.562-17.878c4.9215 1.6467 11.768-6.7596 15.293-2.9538m-31.01-10.378c4.1616 5.4633 9.202 11.153 15.717 13.332m-15.275-20.034c2.0832.8099-1.7989 4.9211-.4424 6.7018m-11.805-4.5912c3.9869 1.1172 8.3887-3.6105 12.248-2.1106m-19.258-5.3957c3.1652 1.3037 3.7141 6.5834 7.0101 7.5064m-18.927-7.8039c3.8293 1.0536 8.2458-1.2156 11.916.29753m-23.579-6.4924c4.3369.74774 7.4194 5.0267 11.663 6.1949m-16.369-2.8295c1.8351.59016 2.8084-3.6927 4.7062-3.3654m-18.955-6.094c5.3854 1.8625 8.8242 7.7148 14.249 9.4594m-19.874-6.8868c1.1539-1.7059 3.6786-3.2464 5.6252-2.5726m-9.3463 13.826c-1.4681-3.6683 1.5101-7.9835 3.7211-11.253m6.716 16.763c-2.1351-3.3017-8.9754-1.8586-10.437-5.5093m18.731 28.962c-4.8829-6.7028-3.793-16.492-8.2937-23.453m21.444 29.432c-2.2158-4.2731-10.316-2.0886-13.151-5.9796m15.686 30.221c.371-8.1156 1.2043-17.03-2.5354-24.241m-1.1612 25.548c1.0105.8231 3.6374-.002 3.6966-1.3066m-9.5202-7.751c3.4839.8603 3.0415 6.7919 5.8236 9.0576m-8.5757-2.116c2.2081-1.15.3402-7.5377 2.7521-6.9416m-14.838 7.7329c3.5405-1.9418 8.5081 1.0717 12.086-.7913m-15.2 8.3422c1.7685-2.0705.72914-6.2433 3.1138-7.5508m-6.9 8.0779c1.2269.34599 2.9626.43799 3.7862-.52703"
                     clip-rule="evenodd"
@@ -218,7 +211,7 @@
                     stroke-width="2.58"
                     id="msk" 
                 />
-                <a class="map-region" href="/brno">
+                <a class="map-region" href="{{ .Site.BaseURL }}brno">
                     <path
                         d="m1058.6 562.98c-1.95 3.3746-6.1381 6.2426-5.8487 10.125.4719 6.3104 6.6272 11.09 7.8878 17.295.3919 1.9316-5.1898 4.0639-3.3812 4.867 3.5416 1.5729 9.2339-4.3071 11.574-1.2286 2.6265 3.4557-.2295 9.237-2.8543 12.694-1.6885 2.2227-6.4653-.33364-8.1999 1.8578-1.8871 2.3844 1.2965 6.6338-.4812 9.1047-1.245 1.7312-5.081-1.2076-6.4084.46453-1.1846 1.4924 1.7596 3.5563 1.7042 5.4634-.036 1.2208-2.9433 2.378-1.9602 3.1108 1.9665 1.4655 4.9412 1.487 7.3227.8822 4.9633-1.2608 8.9151-6.8927 14.003-6.3144 3.1434.35713 3.9067 5.2836 4.3481 8.4022.5048 3.5661-3.4323 7.562-1.6339 10.684 1.1297 1.9623 4.2662-3.4889 6.324-2.5358 2.953 1.3678 2.4909 6.8644 5.5322 8.0241 4.1411 1.5798 8.8738-1.3253 13.283-.84268 1.7729.19394 4.0461 1.1079 4.5533 2.8098.829 2.7816-3.2596 6.6578-1.1352 8.647 2.2114 2.0708 6.2828-2.5583 9.0235-1.2628 3.9278 1.8578 4.435 8.9582 8.7232 9.6636 4.8166.79182 8.4779-5.586 13.338-6.0237 1.7606-.15926 1.0792 3.7571 2.6362 4.5909 2.4119 1.2921 6.5746-1.0512 8.1346 1.1895 1.5888 2.2813-3.6256 6.2743-1.5997 8.181 3.4696 3.2646 10.328.26914 13.914 3.4038 5.0555 4.418 6.6592 11.646 9.9889 17.469-8.2135 4.9001-15.122 13.665-24.644 14.703-6.5193.71128-10.25-10.375-16.803-10.196-5.2276.14218-6.7454 8.2181-11.199 10.955-2.0263 1.2452-5.1045 1.5554-7.1456.32827-3.9258-2.3599-5.1576-8.0681-9.2285-10.165-8.426-4.3388-17.693-9.4676-27.135-8.5639-5.0157.48022-5.0686 9.0182-9.1028 12.029-2.3183 1.7303-6.7346-.99166-8.6183 1.2032-3.8463 4.4815-4.0072 12.405-3.6947 13.142.3125.73621 1.5049 1.6521.9335 2.212-2.9197 2.8612-7.3929 3.8802-10.192 6.863-.7697.82015 1.2386 2.3766.6313 3.3262-2.8814 4.504-8.5628 7.157-10.526 12.129-1.0056 2.547 3.3582 5.1307 2.6616 7.7803-.5189 1.9745-4.7807.92083-5.4493 2.8514-2.2001 6.3544-.6633 13.545-2.4723 20.019-.5862 2.0977-2.3237 4.3399-4.4624 4.7961-2.0437.43529-5.1394-.6136-5.702-2.6202-1.4133-5.0336 1.4014-10.516.5538-15.676-.8506-5.1737-.6417-12.856-5.5593-14.718-6.8886-2.6081-14.359 5.3628-21.67 4.4117-6.1194-.79677-9.9864-7.8678-15.985-9.3216-3.0919-.74994-6.6718 5.4585-8.9748 3.2661-4.4732-4.2578-1.2858-13.485-5.9728-17.506-3.448-2.9569-9.3634 2.2207-13.646.68339-4.795-1.7219-6.818-8.389-11.713-9.794-2.1972-.63116-2.2938 4.8655-4.5679 5.1083-9.4188 1.0068-10.47-6.7403-11.746-3.377-1.7473 4.6027-2.5513 9.6846-5.2428 13.814-3.2057 4.9187-7.5455 9.1169-12.114 12.822-1.0287.83381-2.8731.97163-3.9788.24125-1.9411-1.2814-1.837-5.2876-4.143-5.6011-1.7042-.23159-.23011 4.7121-1.9495 4.7682-16.52.54033-33.248-.0786-49.498-3.097-8.063-1.4972-15.264-6.1512-22.36-10.246-3.8566-2.2261-7.9124-4.7873-10.238-8.5712-.95165-1.5491 2.904-3.7052 1.8023-5.1513-.9997-1.3121-3.4181 2.0527-4.8279 1.1871-2.1225-1.3033-1.5609-5.2592-3.7472-6.4541-1.608-.87879-3.7918 2.5495-5.2963 1.507-2.2992-1.594-1.2273-5.9954-3.5088-7.6123-2.147-1.5222-5.7918 1.0909-7.9006-.48652-1.4854-1.1118 1.5712-4.9476-.18201-5.5533-4.0675-1.4039-9.0018-.8236-12.884 1.0346-2.877 1.3771-2.5169 6.753-5.5386 7.7891-4.3864 1.5047-9.6842.85008-13.88-1.122-6.3495-2.9838-10.181-9.9469-16.431-13.129-5.8678-2.9862-14.056-2.7244-15.887-3.332l9.7877-12.867c1.8631-1.2452 3.4141-4.266 5.5867-3.7292 3.2519.80309 3.9656 7.4394 7.2737 6.9182 2.9786-.46898.60534-6.6065 2.9178-8.5288 2.3786-1.9765 6.2381-2.5055 9.1745-1.5236 2.795.93501 3.1292 7.586 5.8962 6.5708 3.8336-1.4069 2.7112-8.0334 5.6858-10.817 1.7763-1.6634 5.2919.23157 7.2134-1.2638 2.6955-2.0981 2.4159-7.1649 5.4984-8.6362 3.5726-1.7058 8.6433 2.592 11.891.32827 2.6749-1.8652-1.0968-7.6314 1.4574-9.648 1.9607-1.5475 4.5493 4.0716 6.848 3.0874 2.4335-1.042 1.1391-5.4795 3.0325-7.3182 1.6011-1.5564 4.4065-2.8255 6.4398-1.9002 1.7523.79623.24332 4.1522 1.5613 5.5533 1.8808 2.0009 4.6381 3.143 7.2923 3.8665 1.3598.37081 3.1782.25648 4.1657-.74055 1.5741-1.5901.4223-5.9885 2.6548-6.1526 4.0759-.29851 7.1078 4.3906 11.121 5.1385 2.2859.42598 4.6361-.82121 6.7414-1.7992 2.1662-1.0068 5.1595-1.8143 5.8894-4.0785.62447-1.9384-4.5679-4.3731-2.8221-5.4268 4.6704-2.8201 11.506.17391 16.177-2.6379 2.4273-1.4611.13544-6.0603 1.9141-8.2601 1.193-1.4758 4.279.30626 5.6102-1.0449 2.5346-2.5729 4.3894-6.0804 4.9078-9.643.29139-2.0034-.72837-4.971-2.7048-5.4488-2.071-.50073-3.2209 3.3492-5.3484 3.506-1.3646.10113 2.726-1.9618 2.437-3.2886-.50625-2.318-5.4474-3.4991-4.3903-5.6246 1.8326-3.6828 7.9418-3.3458 10.472-6.5865 1.19-1.5242.54155-4.3872-.84762-5.735-2.0971-2.0341-7.4239-.26374-8.2328-3.0688-1.2514-4.3374.87222-9.4412 3.5746-13.061 1.5182-2.0332 7.3821.84169 7.4434-1.6907.0839-3.4435-7.3835-3.994-7.2212-7.437.20558-4.3374 6.1082-6.3808 8.0713-10.255.60629-1.1968-1.9401-3.1083-.87797-3.9348 5.9178-4.6046 15.084-4.9241 19.774-10.762 2.3952-2.9813-1.347-7.5249-2.0672-11.278-.99772-5.2015-3.4602-10.306-3.0938-15.583.27125-3.8987 5.5234-6.7901 4.9264-10.653-.57833-3.739-7.1466-4.5118-7.852-8.2278-.42479-2.2388 4.717 3.0351 6.6257 1.7835 3.5093-2.3018 7.4811-6.4609 6.7861-10.59-.69908-4.1552-8.4711-3.9466-9.9099-7.9073-1.2042-3.316 2.2658-6.6822 3.3989-10.022 1.2332.94036 2.4998 3.8069 3.6957 2.8245 2.0058-1.6477.59111-5.332 1.9975-7.5034.71324-1.0986 2.4934-1.7889 3.7158-1.3141 1.3377.5193.85643 3.7209 2.2884 3.6404 3.1929-.17788 5.4048-4.0194 8.5918-4.2372 3.7447-.25847 7.8672 5.1351 10.882 2.908 3.3921-2.505.0863-8.7197 2.0298-12.45.77756-1.4968 3.2837-.98576 4.9741-1.0034 8.6379-.084 17.405-.79724 25.906.70593 7.8942 1.399 15.145 5.265 22.718 7.8976-.7343 2.8015.5533 7.478-2.201 8.411-3.4602 1.1719-7.384-6.6573-10.113-4.2338-3.5706 3.1723-4.7327 11.064-1.1797 14.256 5.0795 4.5636 13.623 1.5402 20.315 2.9432 1.5869.33218-3.7664-.89004-4.8646.30096-1.3559 1.4713.1628 4.2309-.88445 5.9338-.67257 1.0933-3.5628.0991-3.6212 1.3829-.25649 5.6911.63177 11.599 2.7951 16.872 1.1184 2.7288 6.2446 3.0228 6.5777 5.9558.23445 2.0609-4.305 1.1754-5.5877 2.8089-1.1881 1.5124-2.3354 4.2157-1.0762 5.6715 3.6236 4.1904 8.397 8.4027 13.898 9.1496 3.186.4323 5.779-3.4522 7.3084-6.2665 1.0974-2.019-1.0496-4.7785-.1544-6.8923.6377-1.506 4.1989-.97065 4.1789-2.6037-.042-3.4991-2.1314-6.8468-4.3187-9.5868-2.1584-2.7034-11.221-4.3437-8.3171-6.2294 3.2174-2.0883 6.4343-4.1786 9.6513-6.267 2.4665-1.6018 6.4657-.44791 8.7208 1.4377 2.0912 1.7498.7628 5.607 2.3482 7.8238 1.6041 2.2437 5.519 2.3741 6.7297 4.8503 1.271 2.6003-1.5559 6.1712-.1177 8.6836 1.1071 1.933 4.8969.48655 6.3417 2.1826 2.2181 2.6047.4778 8.3548 3.6804 9.577 2.3929.91255 1.038-5.7584 3.3264-6.901 1.4245-.71128 2.9932 2.1846 2.9314 3.7703-.1746 4.4698-6.3607 9.4256-3.5873 12.949 4.717 5.991 15.575 3.8235 21.015 9.175 4.0759 4.0101 3.3171 10.928 4.9746 16.396z"
                         clip-rule="evenodd"
@@ -280,7 +273,7 @@
                     stroke-width="2.5881"
                     id="sck"
                 />
-                <a class="map-region" href="/praha">
+                <a class="map-region" href="{{ .Site.BaseURL }}praha">
                     <path
                         d="m476.65 293.51c-2.3923.69001-5.9492-1.9654-7.4679.022-2.086 2.7275 1.7914 7.7158-.4382 10.33-1.882 2.2054-5.9492 1.326-8.6652.3293-1.9453-.71355-1.8177-5.3294-3.8447-4.9167-5.9107 1.2042-11.127 5.0649-15.789 8.9182-1.4432 1.193 4.0039-1.4821 5.5791-.47892 3.2906 2.0954 7.8686 4.9834 7.6461 8.8995-.19431 3.4258-6.9649 2.674-8.4861 5.748-.7615 1.5389 3.8087.15608 4.9175 1.4629 2.1979 2.5906 1.9758 6.7648 4.2323 9.3044 1.1408 1.2838 4.787-.59875 5.0172 1.1086.36026 2.6716-5.1405 4.6723-3.9144 7.0691 1.4759 2.8864 7.3613.46566 9.1502 3.1667 1.2606 1.905-3.2385 3.9332-2.9488 6.2073.16309 1.2794 3.8841-.72874 3.8018.55652-.12512 1.9447-5.583 2.8742-4.1076 4.1409 3.833 3.2894 9.5738 6.1818 14.383 4.6738 3.0068-.94274-1.6862-7.6869.9086-9.4746 3.5389-2.4376 8.9087 1.6424 12.864-.0204 3.055-1.2843 3.2984-6.0969 6.0519-7.9445 2.1508-1.4433 5.471.13052 7.6573-1.2543.87892-.557-1.9335-2.6539-.95144-2.9994 3.1587-1.1121 6.757.44019 10.042-.20759 1.0031-.19775 1.1866-2.515 2.1517-2.1946 4.3686 1.4531 7.5326 5.748 11.987 6.8944 1.2232.31409-1.002-2.9743-.0603-3.8214.89252-.80285 3.3752 1.8986 3.5277.70374.67443-5.298-3.4961-10.966-1.5766-15.943 1.4267-3.6987 7.5239-3.1721 10.108-6.1617 1.4042-1.6249 2.103-4.7386.77081-6.4178-2.2204-2.7967-7.1256-2.1274-9.5948-4.7038-1.193-1.2445 1.5659-4.2836.11002-5.2008-3.4786-2.1921-8.8922.23212-12.099-2.3501-1.9584-1.5772 1.8026-6.1067-.22979-7.5799-3.7323-2.704-9.4706-.36661-13.582-2.4366-1.5368-.77388.41963-5.3186-1.2724-5.034-9.0669 1.5233-17.042 7.0534-25.878 9.6047z"
                         clip-rule="evenodd"
@@ -294,7 +287,7 @@
                         id="kp" 
                     />
                 </a>
-                <a class="map-region" href="/plzen">
+                <a class="map-region" href="{{ .Site.BaseURL }}plzen">
                     <path
                     d="m298.18 672.41c-3.1147-.18264-6.8008-2.3468-9.3487-.54689-2.5246 1.7834.57565 9.1529-2.509 8.9367-5.9559-.41733-9.9998-6.551-14.761-10.153-1.8432-1.3952-4.4856-2.5587-5.0038-4.812-1.5165-6.5924 2.5416-14.385-.77383-20.281-5.2639-9.3618-14.006-16.82-23.204-22.367-3.1088-1.8749-7.2103 2.7583-10.734 1.8842-4.3751-1.0846-8.811-3.6427-11.35-7.3677-2.2961-3.3704.34874-8.7039-1.9202-12.089-2.8815-4.3005-9.2596-5.2335-12.429-9.3306-3.0139-3.8945-2.397-9.8702-5.4319-13.744-2.5898-3.3052-8.0017-3.4966-10.637-6.7662-2.2626-2.809-.635-5.4757-.58442-7.166.0507-1.6898 1.1819-3.7338.15245-5.0705-1.0076-1.309-3.539-.0284-4.8533-1.0275-4.6093-3.5054-7.3618-9.3604-12.447-12.129-4.1311-2.2494-9.3916-3.464-13.938-2.2436-1.888.50695 2.4682 5.857.51087 5.8512-7.5337-.023-15.983-1.1527-21.816-5.9174-4.2495-3.4717-1.9787-11.033-4.7417-15.775-2.2441-3.8516-5.9603-6.8329-9.7749-9.1324-3.1937-1.9247-8.2208-.45583-10.724-3.2224-3.1537-3.4849-4.0648-8.7263-4.3405-13.417-.29563-5.0252 4.735-10.261 2.6906-14.857-1.7366-3.9056-9.505-1.6368-11.667-5.3199-3.947-6.7214-2.4573-15.284-4.2036-22.817-.4661-2.0098-.53665-3.0509-1.612-3.6621-1.8344-1.0432-5.6627 1.497-6.3235-.50943-2.1438-6.513 2.993-14.736-.62095-20.559-2.9443-4.7452-11.67-1.9562-15.726-5.7918-4.7452-4.4871-10.342-11.1-8.887-17.466 1.2983-5.6827 11.786-4.1813 14.956-9.0707 2.695-4.1549-1.1079-10.19.56056-14.848.64433-1.7989 4.3396-.28678 5.426-1.8579 1.1493-1.663-.89119-4.2899.0516-6.0756 4.5217-8.5652 11.66-13.311 11.179-15.188-.48164-1.8768.0696-4.436-1.4517-5.6286l1.4517 5.6286c2.9965 1.405 5.7172 4.7058 8.9884 4.2178 4.3463-.64865 6.6494-7.5396 11.027-7.2142 3.5224.26149 3.1786 6.9263 6.3406 8.5033 1.8131.90385-2.6989-4.5573-1.2355-5.9534 2.059-1.964 6.2753.82693 8.4843-.95938 1.255-1.0149-3.1766-3.9173-1.6889-4.5412 6.8826-2.8878 14.581-4.397 22.034-4.0055 3.353.17632 5.0428 5.1714 8.3704 5.6033 2.844.36912 5.0135-3.6543 7.877-3.4835 3.0383.18172 4.9566 4.7662 7.9827 4.4429 2.9351-.31358 5.4362-3.239 6.5271-5.9783 1.4313-3.5944-1.817-8.4775.47095-11.592 1.6572-2.2562 5.8794.76846 8.3874-.47143 1.0557-.52155-1.2759-2.8582-.30679-3.5302 4.7462-3.2906 11.062-3.8375 15.767-7.1807 2.4305-1.7269 2.2942-6.0123 4.8752-7.4932 1.175-.67402.70068 3.2009 2.0151 3.5404 3.5653.92192 7.6053-1.4566 11.051-.16168 5.43 2.041 9.2767 12.398 14.429 9.7368 5.0827-2.6244-3.0626-12.304-.054-17.167 2.3088-3.7318 8.9142-1.1799 12.735-3.333 1.403-.79084 2.1355-3.2039 1.3933-4.6308-.71733-1.3787-3.914.14221-4.4847-1.3061-.83225-2.114-.0711-4.8977 1.326-6.6863.79625-1.0203 2.5982.004 3.894.004 1.6523-.38378 3.5117-2.0278 4.9551-1.1479 1.6022.98084-.004 5.2892 1.8774 5.3218 2.2742.0386 2.2654-5.968 4.4126-5.2151 2.9531 1.0354 1.517 7.0637 4.3907 8.3051 2.2475.96811 4.2466-2.4427 6.3693-3.6641 1.532 3.0052 4.1316 5.6768 4.5932 9.019.15435 1.1192-2.7568-1.2164-3.3914-.27747-1.891 2.8021-6.1901 8.6664-2.9721 9.7042 7.8848 2.544 16.43-3.0072 24.706-2.6946 1.6826.0634 4.2826 2.3342 3.3856 3.7635-1.3149 2.0984-5.7641.0979-7.1174 2.1744-.86921 1.3334 2.3756 2.2075 3.8156 2.8849 5.6656 2.6653 11.196 6.2578 17.404 7.0998 3.5764.48506 7.0788-4.9312 10.309-3.33 4.7546 2.3575 4.6756 10.224 9.1982 13.006 2.8698 1.7648 10.478-4.5173 10.032-1.1829l-1.0793 8.0665c-.63892 4.7749 9.0984 3.2423 13.793 4.322 1.5.34523 4.1112-1.5345 4.6122-.0857.65505 1.8934-3.2496 3.385-2.7875 5.3393l3.2974 13.933c.39931 1.6898-4.6672-1.8248-5.2137-.17585-3.6471 11.007-6.4828 22.67-6.0786 34.264.0877 2.5124 7.4524-.70765 7.3302 1.8067-.14264 2.9365-5.6866 2.2226-7.6365 4.4242-1.7118 1.9324-.30877 6.3206-2.7135 7.2571-1.9704.76698-2.4608-4.4915-4.5743-4.4097-3.8199.14806-8.6065 1.5681-10.346 4.9746l-4.9848 9.7602c-.60523 1.1849.73972 3.1479 2.041 3.4372 3.0778.68463 8.102-3.7415 9.4213-.88154 1.2476 2.7053-7.8137.19002-8.3854 3.1153-.62243 3.182 7.392 4.3425 6.3264 7.4071-.97886 2.8163-11.613-1.2238-8.9576.14372l16.267 8.3747c7.1777 3.6958-4.4788 15.92-3.6626 23.959.20407 2.0147 5.0218-1.7746 6.0762-.0477 1.7628 2.8854.0691 6.7696.10273 10.157-1.2487 2.9039-3.9144 5.5561-3.7488 8.7152.075 1.4337 3.8652-.62431 4.2475.76025.90337 3.2715-2.116 6.8348-1.2394 10.119.67934 2.5454 5.3968 3.0762 5.4733 5.7099.0633 2.1656-3.9957 2.1106-5.2006 3.9168-1.118 1.6767-1.7658 3.9276-1.348 5.9057 1.2262 5.8063 5.6939 10.801 6.1268 16.722.2459 3.3607-1.817 6.8398-4.2422 9.1865-2.3852 2.3093-7.5069.97348-9.2021 3.8292-1.6363 2.7573 2.7671 6.7146 1.2579 9.5499-1.0704 2.0112-5.5419-1.0588-6.794.84982-1.251 1.9084.2576 5.0189 1.9236 6.5787 1.3382 1.253 6.1935-1.3304 5.4898.3579-1.6261 3.9008-8.5695 4.5066-9.2606 8.6806-.67249 4.0634 6.0046 6.6727 6.0338 10.795.0164 2.2865-4.9045 1.4055-5.9388 3.4498-1.2808 2.5319 1.6831 6.3246-.11885 8.5223-1.3986 1.7064-4.6678-1.3456-6.6152-.30535-2.8655 1.5316-3.3223 6.4638-6.4628 7.3063-2.9375.78885-6.6128-5.6388-8.5291-3.2741-2.4335 3.0043 2.4422 7.6189 1.9153 11.452-.18743 1.3602-3.9256.38963-3.74 1.7546.63402 4.6693 5.5312 8.2233 5.7284 12.933.11494 2.75-2.5153 5.2877-4.9136 6.643-1.0972.62047-2.2674-2.9389-3.1728-2.0639-2.8502 2.7534-5.0038 6.588-5.5726 10.512-.77041 5.3174 1.1464 10.689 1.7176 16.037z"
                     clip-rule="evenodd"
@@ -431,11 +424,11 @@
     <div class="layout-container" id="partners">
         <div class="layout-content">
             <div id="partner-row">
-                <a href="https://www.plzensky-kraj.cz/" class="partner-link"><img src="/media/imgs/partners/plk.png"></a>
-                <a href="https://www.podporatalentu.cz/" class="partner-link"><img src="/media/imgs/partners/go-higher.png"></a>
-                <a href="https://fav.zcu.cz/" class="partner-link"><img src="/media/imgs/partners/fav-zcu.png"></a>
-                <a href="https://www.hvezdarna.cz/" class="partner-link"><img src="/media/imgs/partners/hvezdarna-brno.png"></a>
-                <a href="https://www.radovanek.cz/" class="partner-link"><img src="/media/imgs/partners/radovanek.png"></a>
+                <a href="https://www.plzensky-kraj.cz/" class="partner-link"><img src="{{ .Site.BaseURL }}media/imgs/partners/plk.png"></a>
+                <a href="https://www.podporatalentu.cz/" class="partner-link"><img src="{{ .Site.BaseURL }}media/imgs/partners/go-higher.png"></a>
+                <a href="https://fav.zcu.cz/" class="partner-link"><img src="{{ .Site.BaseURL }}media/imgs/partners/fav-zcu.png"></a>
+                <a href="https://www.hvezdarna.cz/" class="partner-link"><img src="{{ .Site.BaseURL }}media/imgs/partners/hvezdarna-brno.png"></a>
+                <a href="https://www.radovanek.cz/" class="partner-link"><img src="{{ .Site.BaseURL }}media/imgs/partners/radovanek.png"></a>
             </div>
         </div>
     </div>
