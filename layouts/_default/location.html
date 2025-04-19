@@ -12,8 +12,6 @@
                 {{with .Params.joinUs}}<a href="{{. | absURL}}" class="primary-button">Přednášej u nás</a>{{end}}
             </div>
             <div class="header-graphics">
-                <img class="header-graphics-photo" src="{{.Params.headerPhoto | absURL}}">
-                <img class="header-graphics-photo" src="{{ .Site.BaseURL }}{{.Params.headerPhoto | absURL}}">
                 <img class="header-graphics-photo" src="{{ .Site.BaseURL }}{{.Params.headerPhoto}}">
                 <img class="header-graphics-logo" src="{{ .Site.BaseURL }}favicon/icon.png">
                 <div class="header-graphics-circle"></div>
