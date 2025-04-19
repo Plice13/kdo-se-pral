@@ -328,7 +328,7 @@
                 speakers.forEach(speaker => {
                   const clone = template.content.cloneNode(true);
             
-                  clone.querySelector('.speaker-photo').src = speaker.photo;
+                  clone.querySelector('.speaker-photo').src = baseURL + speaker.photo;
                   clone.querySelector('.speaker-photo').alt = speaker.name;
                   clone.querySelector('.speaker-name').textContent = speaker.name;
             
