@@ -1,0 +1,8 @@
+[context.production.environment]
+TZ = "Europe/Prague"
+HUGO_VERSION = "0.140.2"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "false"
+
+[build]
+publish = "public"
