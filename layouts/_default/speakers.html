@@ -318,7 +318,8 @@
             </div>
         </template>
         <script>
-            fetch('/json/speakers.json')
+          const baseURL = '{{ .Site.BaseURL }}';
+          fetch(baseURL + 'json/speakers.json')
               .then(response => response.json())
               .then(speakers => {
                 const container = document.getElementById('speakers-container');
