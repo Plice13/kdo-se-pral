@@ -15,7 +15,7 @@ def fix_hugo_urls(directory_path):
     # Group 1: The attribute name (href or src)
     # Group 2: The quote character (' or ")
     # Group 3: The path segment after the leading slash
-    pattern = re.compile(r'(href|src)=(["\'])\/([^"\'>]*)\2')
+    pattern = re.compile(r'(href|src|img)=(["\'])\/([^"\'>]*)\2')
 
     # Replacement string: attribute="{{ .Site.BaseURL }}path"
     # \1 is the captured attribute name (href or src)
