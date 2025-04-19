@@ -3,21 +3,24 @@
 {{end}}
 
 {{define "main"}}
-    <header class="layout-container">
-        <div class="layout-content">
-            <div class="header-body">
-                <h1>Zvaž vědu!<br><span>{{.Params.headerTitle}}</span></h1>
-                <p class="header-text">{{.Params.headerText}}</p>
-                {{with .Params.registration}}<a href="{{.}}" class="primary-button">Přijď na Zvaž vědu!</a>{{end}}
-                {{with .Params.joinUs}}<a href="{{.}}" class="primary-button">Přednášej u nás</a>{{end}}
-            </div>
-            <div class="header-graphics">
-                <img class="header-graphics-photo" src="{{.Params.headerPhoto}}">
-                <img class="header-graphics-logo" src="{{ .Site.BaseURL }}favicon/icon.png">
-                <div class="header-graphics-circle"></div>
-            </div>
-        </div>
-    </header>
+    <header class="layout-container">
+            <div class="layout-content">
+                <div class="header-body">
+                    <h1>Zvaž vědu!<br><span>{{.Params.headerTitle}}</span></h1>
+                    <p class="header-text">{{.Params.headerText}}</p>
+                    {{with .Params.registration}}{{/* Use absURL for the link */}}<a href="{{. | absURL}}" class="primary-button">Přijď na Zvaž vědu!</a>{{end}}
+                    {{with .Params.joinUs}}{{/* Use absURL for the link */}}<a href="{{. | absURL}}" class="primary-button">Přednášej u nás</a>{{end}}
+                </div>
+                <div class="header-graphics">
+                    {{/* Use absURL filter on the headerPhoto parameter */}}
+                    <img class="header-graphics-photo" src="{{.Params.headerPhoto | absURL}}">
+                    {{/* This one was already correct using .Site.BaseURL */}}
+                    <img class="header-graphics-logo" src="{{ .Site.BaseURL }}favicon/icon.png">
+                    <div class="header-graphics-circle"></div>
+                </div>
+            </div>
+        </header>
+   
     {{if .Params.joinUs}}
         <section class="layout-container" id="accomplishments">
             <div class="layout-content bento-board">
