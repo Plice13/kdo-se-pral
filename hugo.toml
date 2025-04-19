@@ -7,3 +7,6 @@ enableEmoji = true
     description = 'Oficiální stránky Zvaž vědu!'
 [markup.goldmark.renderer]
     unsafe = true
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
