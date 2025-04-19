@@ -46,8 +46,8 @@ def find_string_in_files(directory_path, search_string):
 
 if __name__ == "__main__":
     # Define the string to search for
-    string_to_find = "Ohlédnutí"
-    
+    string_to_find = "graphic"
+
 
     # Get the directory where the script is located
     # This will be the starting point for os.walk()
