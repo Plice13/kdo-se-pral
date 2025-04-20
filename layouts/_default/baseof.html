@@ -15,7 +15,7 @@
         {{ block "styles" . }}{{ end }}
 
         <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
+        <script src="{{ .Site.BaseURL }}js/darkmode.js"></script>
 
         {{ block "scripts" . }}{{ end }}
 
