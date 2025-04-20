@@ -92,11 +92,3 @@
     --shadow: 0 0 1rem #00000024;
     --transition: all .1s ease-in-out;
 }
-
-body.dark-mode {
-  --background: #1e1e1e;  /* Dark background color */
-  --text: #ffffff;        /* White text color */
-  --secondary-background: #2c2c2c; /* Dark secondary background */
-  --primary: #ffc300;     /* Keep primary color consistent */
-  /* You can also adjust other color variables for dark mode */
-}

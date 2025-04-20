@@ -9,15 +9,15 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon/favicon-16x16.png">
         <link rel="manifest" href="{{ .Site.BaseURL }}favicon/site.webmanifest">
 
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/root.css">
         <link rel="stylesheet" href="{{ .Site.BaseURL }}css/base.css">
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/root.css">
         
         {{ block "styles" . }}{{ end }}
 
         <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
         <script src="{{ .Site.BaseURL }}js/darkmode.js"></script>
 
-        {{ block "scripts" . }}{{ end }}
+        {{ block "scripts" . }}{{ end }} 
 
         <title>{{ .Title }}</title>
     </head>
@@ -110,19 +110,25 @@
         <!-- Dark Mode Toggle Script -->
         <script>
             const darkmode = new Darkmode({
-                bottom: '64px',        // Distance from bottom (for button)
-                right: '32px',         // Distance from right (for button)
-                left: 'unset',         // Optional - if you prefer left side for toggle button
-                time: '1s',          // Transition time for mode switching
-                mixColor: '#fff',      // Optional - the mix color between dark and light mode
-                backgroundColor: '#fff',  // Background color for light mode
-                buttonColorDark: '#100f2c', // Button color for dark mode
-                buttonColorLight: '#fff',  // Button color for light mode
-                saveInCookies: true,   // Save theme preference in cookies
-                autoMatchOsTheme: true, // Automatically switch to dark mode if the OS is set to dark
+                bottom: '64px',
+                right: '32px',
+                time: '0.3s',
+                autoMatchOsTheme: true,
+                saveInCookies: true,
+                lightCSS: [
+                    {{- range $i, $path := slice "css/base.css" "css/home.css" "css/contact.css" "css/location.css" "css/report.css" "css/root.css" "css/single.css" "css/speakers.css" -}}
+                      {{- if $i }}, {{ end }}"{{ $.Site.BaseURL }}{{ $path }}"
+                    {{- end }}
+                ],
+                darkCSS: [
+                    {{- range $i, $path := slice "css-dark/base.css" "css-dark/home.css" "css-dark/contact.css" "css-dark/location.css" "css-dark/report.css" "css-dark/root.css" "css-dark/single.css" "css-dark/speakers.css" -}}
+                      {{- if $i }}, {{ end }}"{{ $.Site.BaseURL }}{{ $path }}"
+                    {{- end }}
+                ]
             });
         
-            darkmode.showWidget();  // Display the dark mode toggle button
+            darkmode.showWidget();
         </script>
+        
     </body>
 </html>
