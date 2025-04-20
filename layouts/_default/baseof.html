@@ -15,6 +15,8 @@
         {{ block "styles" . }}{{ end }}
 
         <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
+
         {{ block "scripts" . }}{{ end }}
 
         <title>{{ .Title }}</title>
@@ -112,25 +114,20 @@
 
         <!-- Dark Mode Toggle Script -->
         <script>
-            const toggleButton = document.getElementById('darkModeToggle');
-            const body = document.body;
-
-            // Check for saved theme in localStorage
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                body.classList.add(savedTheme);
-            }
-
-            // Toggle dark mode on button click
-            toggleButton.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    body.classList.remove('dark-mode');
-                    localStorage.setItem('theme', 'light-mode');
-                } else {
-                    body.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark-mode');
-                }
+            const darkmode = new Darkmode({
+                bottom: '64px',        // Distance from bottom (for button)
+                right: '32px',         // Distance from right (for button)
+                left: 'unset',         // Optional - if you prefer left side for toggle button
+                time: '1s',          // Transition time for mode switching
+                mixColor: '#fff',      // Optional - the mix color between dark and light mode
+                backgroundColor: '#fff',  // Background color for light mode
+                buttonColorDark: '#100f2c', // Button color for dark mode
+                buttonColorLight: '#fff',  // Button color for light mode
+                saveInCookies: true,   // Save theme preference in cookies
+                autoMatchOsTheme: true, // Automatically switch to dark mode if the OS is set to dark
             });
+        
+            darkmode.showWidget();  // Display the dark mode toggle button
         </script>
     </body>
 </html>
