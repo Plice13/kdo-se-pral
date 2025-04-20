@@ -20,6 +20,7 @@
     </head>
     <body>
         <nav>
+            <button id="dark-mode-toggle" title="Přepnout tmavý režim">🌓</button>
             <div class="layout-content">
                 <div class="nav-logo">
                     <a href="{{ .Site.BaseURL }}" class="nav-link"><img src="{{ .Site.BaseURL }}media/imgs/base/full-logo-blk.png" alt="logo"></a>
@@ -86,44 +87,21 @@
                 </div>
             </div>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
         <script>
-          const options = {
-            bottom: '32px',
-            right: '32px',
-            time: '0.5s',
-            mixColor: '#fff',
-            backgroundColor: '#121212',
-            buttonColorDark: '#100f2c',
-            buttonColorLight: '#fff',
-            saveInCookies: true,
-            label: '🌓',
-            autoMatchOsTheme: true
-          };
-        
-          window.addEventListener('load', () => {
-            const darkmode = new Darkmode(options);
-            darkmode.showWidget();
-        
-            // On load, apply CSS theme manually based on darkmode status
-            if (darkmode.isActivated()) {
-              document.body.classList.add('dark-theme');
+            const toggleBtn = document.getElementById('dark-mode-toggle');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          
+            // On load: use saved preference or system
+            if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+              document.body.classList.add('dark-mode');
             }
-        
-            // Observe DOM changes to detect when darkmode is toggled
-            const observer = new MutationObserver(() => {
-              if (darkmode.isActivated()) {
-                document.body.classList.add('dark-theme');
-              } else {
-                document.body.classList.remove('dark-theme');
-              }
+          
+            toggleBtn.addEventListener('click', () => {
+              document.body.classList.toggle('dark-mode');
+              const isDark = document.body.classList.contains('dark-mode');
+              localStorage.setItem('theme', isDark ? 'dark' : 'light');
             });
-        
-            observer.observe(document.documentElement, {
-              attributes: true,
-              attributeFilter: ['class']
-            });
-          });
-        </script>
+          </script>
+          
     </body>
 </html>
