@@ -2,7 +2,7 @@
 
 :root {
     --text: #000000;
-    --background: #2727c0;
+    --background: #fbfbfe;
     --secondary-background: #f0f0f0;
     --tertiary-background: #201f1f;
     --primary: #ffc300;
@@ -92,8 +92,9 @@
     --shadow: 0 0 1rem #00000024;
     --transition: all .1s ease-in-out;
 }
-@media (prefers-color-scheme: dark) {
-    :root {
+/* @media (prefers-color-scheme: dark) {    DONT FORGET TO FLIP IT!! */
+@media (prefers-color-scheme: light) {
+        :root {
         /* Base colours */
         --background: #201f1f;            /* Dark mode background */
         --secondary-background: #333333;   /* Dark mode secondary background */
