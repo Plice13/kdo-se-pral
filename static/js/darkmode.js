@@ -108,7 +108,7 @@
                 .darkmode-layer {
                   position: fixed;
                   pointer-events: none;
-                  background: ${t.mixColor};
+                  background: #201f1f;
                   transition: all ${t.time} ease;
                   mix-blend-mode: difference;
                 }
