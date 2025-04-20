@@ -1,0 +1,16 @@
+rozdily mezi  mnou a Matyášem
+
+C:\Users\Uživatel\Documents\GitHub\kdo-se-pral\layouts\_default\contact.html
+C:\Users\Uživatel\Documents\GitHub\zvaz-vedu.github.io\layouts\_default\contact.html
+
+C:\Users\Uživatel\Documents\GitHub\kdo-se-pral\layouts\_default\home.html
+C:\Users\Uživatel\Documents\GitHub\zvaz-vedu.github.io\layouts\_default\home.html
+
+C:\Users\Uživatel\Documents\GitHub\kdo-se-pral\static\css\root.css
+C:\Users\Uživatel\Documents\GitHub\zvaz-vedu.github.io\static\css\root.css
+
+C:\Users\Uživatel\Documents\GitHub\zvaz-vedu.github.io\static\js\darkmode.js
+ok
+
+C:\Users\Uživatel\Documents\GitHub\zvaz-vedu.github.io\static\media\imgs\base
+ok
