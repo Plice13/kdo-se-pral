@@ -88,21 +88,41 @@
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
         <script>
+          const options = {
+            bottom: '32px',
+            right: '32px',
+            time: '0.5s',
+            mixColor: '#fff',
+            backgroundColor: '#121212',
+            buttonColorDark: '#100f2c',
+            buttonColorLight: '#fff',
+            saveInCookies: true,
+            label: '🌓',
+            autoMatchOsTheme: true
+          };
+        
           window.addEventListener('load', () => {
-            const options = {
-              bottom: '32px',
-              right: '32px',
-              time: '0.5s',
-              mixColor: '#fff',
-              backgroundColor: '#121212',
-              buttonColorDark: '#100f2c',
-              buttonColorLight: '#fff',
-              saveInCookies: true,
-              label: '🌓',
-              autoMatchOsTheme: true
-            };
             const darkmode = new Darkmode(options);
             darkmode.showWidget();
+        
+            // On load, apply CSS theme manually based on darkmode status
+            if (darkmode.isActivated()) {
+              document.body.classList.add('dark-theme');
+            }
+        
+            // Observe DOM changes to detect when darkmode is toggled
+            const observer = new MutationObserver(() => {
+              if (darkmode.isActivated()) {
+                document.body.classList.add('dark-theme');
+              } else {
+                document.body.classList.remove('dark-theme');
+              }
+            });
+        
+            observer.observe(document.documentElement, {
+              attributes: true,
+              attributeFilter: ['class']
+            });
           });
         </script>
     </body>
