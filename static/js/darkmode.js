@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     function updateLogo() {
         // Check if the user prefers dark mode
-        const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const darkMode = true; // FOR TEST ONLY — DELETE AFTERWARDS
+        // const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
         // Choose the appropriate logo image source
         const logoSrc = darkMode 
             ? '/media/imgs/base/logo_transparent.png' 
