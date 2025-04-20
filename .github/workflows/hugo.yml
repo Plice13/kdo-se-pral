@@ -1,5 +1,5 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
+# Workflow to build Hugo site and commit to main/builded-site
+name: Build Hugo site and commit to main branch
 
 on:
   # Runs on pushes targeting the default branch
@@ -10,17 +10,14 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow committing back to the main branch
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write # Changed: Allow writing to the repository contents
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent build/commit run
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }} # Changed group to be specific to this workflow/branch
+  cancel-in-progress: true
 
 # Default to bash
 defaults:
@@ -28,66 +25,68 @@ defaults:
     shell: bash
 
 jobs:
-  # Build job
-  build:
+  # Build and Commit job
+  build-and-commit: # Renamed job for clarity
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.145.0
+      HUGO_VERSION: 0.145.0 # Use your desired Hugo version
       HUGO_ENVIRONMENT: production
-      TZ: America/Los_Angeles
+      TZ: America/Los_Angeles # Optional: Set timezone
+      # IMPORTANT: Define your expected base URL here!
+      # Replace <user> and <repo> with your actual GitHub username and repository name
+      EXPECTED_BASE_URL: "https://<user>.github.io/<repo>/builded-site/"
+
     steps:
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Install Dart Sass
+
+      - name: Install Dart Sass (if needed by your theme/site)
         run: sudo snap install dart-sass
-      - name: Checkout
+
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Install Node.js dependencies
+          # Ensure you check out the branch you want to commit to
+          ref: main
+
+      # Removed: Setup Pages (actions/configure-pages@v5) - Not needed for this method
+
+      - name: Install Node.js dependencies (if needed)
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Cache Restore
-        id: cache-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: |
-            ${{ runner.temp }}/hugo_cache
-          key: hugo-${{ github.run_id }}
-          restore-keys:
-            hugo-
-      - name: Build with Hugo
+
+      # Removed: Cache steps (can be added back if build times are long)
+
+      - name: Build Hugo site into ./builded-site
         run: |
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --cacheDir "${{ runner.temp }}/hugo_cache"
-      - name: Cache Save
-        id: cache-save
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
+            --baseURL "${{ env.EXPECTED_BASE_URL }}" \
+            --destination builded-site # Changed: Build directly into the target folder
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # Removed: Upload artifact (actions/upload-pages-artifact@v3)
+
+      - name: Commit built site files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Build and commit Hugo site"
+          # Specify the directory containing the files to commit
+          # Use '.' if files are relative to the root, or the specific path.
+          # Since hugo builds *into* builded-site, we add that folder.
+          # Git auto commit will detect changes within this folder.
+          file_pattern: builded-site/* # Add everything inside builded-site
+          # Optional: Add the builded-site directory itself if it might be new
+          add_options: '--all builded-site' # Ensures the folder itself is added if new
+          commit_user_name: github-actions[bot] # Optional: Commit author name
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com # Optional: Commit author email
+          commit_options: '--no-verify' # Optional: Skip pre-commit hooks if any
+          # Push to the branch checked out above (main)
+          branch: main
+          # Optional: Define repository if needed, defaults to current repo
+          # repository: .
+
+# Removed: deploy job - commit happens within the build job now
