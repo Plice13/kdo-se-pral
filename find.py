@@ -46,7 +46,7 @@ def find_string_in_files(directory_path, search_string):
 
 if __name__ == "__main__":
     # Define the string to search for
-    string_to_find = "darkomode"
+    string_to_find = "fa-moon"
 
 
     # Get the directory where the script is located
