@@ -11,19 +11,30 @@
 
         <link rel="stylesheet" href="{{ .Site.BaseURL }}css/root.css">
         <link rel="stylesheet" href="{{ .Site.BaseURL }}css/base.css">
-        {{block "styles" .}}{{end}}
+        
+        {{ block "styles" . }}{{ end }}
 
         <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
-        {{block "scripts" .}}{{end}}
+        {{ block "scripts" . }}{{ end }}
 
-        <title>{{.Title}}</title>
+        <title>{{ .Title }}</title>
     </head>
     <body>
+        <!-- Dark Mode Toggle Button -->
+        <button id="darkModeToggle" aria-label="Toggle Dark Mode" class="dark-mode-toggle">
+            <i class="fa-solid fa-moon"></i> <!-- Moon icon for dark mode -->
+        </button>
+
+        <!-- Navigation Bar -->
         <nav>
             <div class="layout-content">
                 <div class="nav-logo">
-                    <a href="{{ .Site.BaseURL }}" class="nav-link"><img src="{{ .Site.BaseURL }}media/imgs/base/full-logo-blk.png" alt="logo"></a>
-                    <a href="{{ .Site.BaseURL }}" class="nav-link"><img src="{{ .Site.BaseURL }}media/imgs/base/mark-blk.png" alt="logo"></a>
+                    <a href="{{ .Site.BaseURL }}" class="nav-link">
+                        <img src="{{ .Site.BaseURL }}media/imgs/base/full-logo-blk.png" alt="logo">
+                    </a>
+                    <a href="{{ .Site.BaseURL }}" class="nav-link">
+                        <img src="{{ .Site.BaseURL }}media/imgs/base/mark-blk.png" alt="logo">
+                    </a>
                 </div>
                 <div class="nav-links">
                     <div>
@@ -39,9 +50,13 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Main Content Block -->
         <main>
-            {{block "main" .}}{{end}}
+            {{ block "main" . }}{{ end }}
         </main>
+
+        <!-- Footer -->
         <footer class="layout-container">
             <div class="layout-content">
                 <div class="footer-container">
@@ -51,11 +66,18 @@
                             Zvaž vědu! je studentský projekt, který popularizuje vědu mezi středoškoláky. Chceme ukázat, že věda není jen nudná teorie, ale že může být zábavná a nabídnout spoustu zajímavých příležitostí.
                         </p>
                         <div class="footer-socials">
-                            <a href="https://instagram.com/zvaz.vedu?igshid=MzRlODBiNWFlZA==" id="ig-icon"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://discord.gg/XggNwnz5n8" id="discord-icon"><i class="fa-brands fa-discord"></i></a>
-                            <a href="https://www.youtube.com/@zvazvedu/" id="yt-icon"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://instagram.com/zvaz.vedu?igshid=MzRlODBiNWFlZA==" id="ig-icon">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://discord.gg/XggNwnz5n8" id="discord-icon">
+                                <i class="fa-brands fa-discord"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@zvazvedu/" id="yt-icon">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
                         </div>
                     </div>
+
                     <div class="footer-columns">
                         <div class="footer-column">
                             <p class="footer-column-title">Navigace</p>
@@ -80,11 +102,35 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="subfooter">
-                    <p>&copy; {{now.Year}} Zvaž vědu!</p>
+                    <p>&copy; {{ now.Year }} Zvaž vědu!</p>
                     <p>Designed by <a class="footer-link" href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
                 </div>
             </div>
         </footer>
+
+        <!-- Dark Mode Toggle Script -->
+        <script>
+            const toggleButton = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            // Check for saved theme in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            }
+
+            // Toggle dark mode on button click
+            toggleButton.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light-mode');
+                } else {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                }
+            });
+        </script>
     </body>
 </html>
