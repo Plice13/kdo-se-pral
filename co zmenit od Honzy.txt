@@ -3,60 +3,61 @@ motivace JH23 k o-nás???
 prohodit JH a MM a DN nakonec
 
 
-talentovaných -> aktivních
-že věda není -> že to není
-že může být zábavná -> že dokáže být zajímavá
-a nabídnout spoustu zajímavých příležitostí. -> a nabídnout spoustu zajímavých příležitostí do budoucna.
-vědecké projekty. -> vědecké projekty, achtějí své zkušenosti předávat dále.
-4 akce -> 5 akcí (red button)
-30+ řečníků -> 40+ řečníků
-40+ ambasadorů -> 30+ organizátorů
-odstranit přidej se ->
-Kdo jsme
-tlačítklo aby šlo o-nas
+OK	talentovaných -> aktivních
+OK	že věda není -> že to není
+OK	že může být zábavná -> že dokáže být zajímavá
+OK	a nabídnout spoustu zajímavých příležitostí. -> a nabídnout spoustu zajímavých příležitostí do budoucna.
+OK	vědecké projekty. -> vědecké projekty, achtějí své zkušenosti předávat dále.
+OK	4 akce -> 5 akcí (red button)
+OK	30+ řečníků -> 40+ řečníků
+OK	40+ ambasadorů -> 30+ organizátorů
+OK	odstranit přidej se ->
+OK	Kdo jsme
+OK	tlačítklo aby šlo o-nas
 Honza dodělá text
 
 Potebujeme tě
 jiný button 
 
-Máš co říc
-jiný button, pod to potřebujeme tě
+OK	Máš co říc
+jiný button
+OK	pod to potřebujeme tě
 
 Podpořte nás
 button -> nějak směřovat na mail "organizatoriězv.cz"¨
 
-partněři
-esero, senát
+	partněři
+OK	esero, senát
 dodělat na vedlejších stránkách
 
-PLZEN
-lepší fotka než senioři (Randík :[ )
+	PLZEN
+POMOC	lepší fotka než senioři (Randík :[ )
 button Přednášej u nás -> nějaký formulář na zaregistrování ať ti nic neuteče -> posílání mailu o akcích
-3 akce
-650+ účastníků
-31 přednášejících
+OK	3 akce
+OK	650+ účastníků
+OK	31 přednášejících
 
-ohlédnutí 23
-VĚTŠÍ PÍSMO +2b
-ohlédnutí JH HO
+	ohlédnutí 23
+ASIOK	VĚTŠÍ PÍSMO +2b
+NAPSAT		ohlédnutí JH HO
 
-ohlédnutí 24
-moc velká mezera
-partnery přidat
+	ohlédnutí 24
+FAKT		moc velká mezera
+NAPSAT		partnery přidat
 
-BRNO
-nechat
+	BRNO
+	nechat
 
-PRAHA
-to samé jak plzeň ale mezi čísla a Ohlédnutí přidat program a prokliknutí na abstrakty a medailonky
-stránka co se pojí s častí - je jídlo neneosit zbraně jak se oblíct...
-tlačítko přijď na akci na gforms
+	PRAHA
+NAPSAT		to samé jak plzeň ale mezi čísla a Ohlédnutí přidat program a prokliknutí na abstrakty a medailonky
+NAPSAT		stránka co se pojí s častí - je jídlo neneosit zbraně jak se oblíct...
+NAPSAT		tlačítko přijď na akci na gforms
 
 ŘEČNÍCI
 dát i plzeňské (ale neprvní plzen)
 
-O NÁS
+	O NÁS
 JH projde pozmění
 
-KONTAKT
+	KONTAKT
 abmasador
