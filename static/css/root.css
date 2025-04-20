@@ -92,8 +92,8 @@
     --shadow: 0 0 1rem #00000024;
     --transition: all .1s ease-in-out;
 }
-/* @media (prefers-color-scheme: dark) {    DONT FORGET TO FLIP IT!! */
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {     FORGET TO FLIP IT!! */
+@media (prefers-color-scheme: dark) {
         :root {
         /* Base colours */
         --background: #201f1f;            /* Dark mode background */
