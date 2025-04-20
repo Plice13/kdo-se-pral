@@ -1,23 +1,4 @@
 <!DOCTYPE html>
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
-<script>
-  const options = {
-    bottom: '32px', // pozice tlačítka
-    right: '32px',
-    time: '0.5s', // animace
-    mixColor: '#fff',
-    backgroundColor: '#121212',
-    buttonColorDark: '#100f2c',
-    buttonColorLight: '#fff',
-    saveInCookies: true,
-    label: '🌓',
-    autoMatchOsTheme: true
-  }
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
-</script>
-
-
 <html lang="cs">
     <head>
         <meta charset="UTF-8">
@@ -105,5 +86,24 @@
                 </div>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
+        <script>
+          window.addEventListener('load', () => {
+            const options = {
+              bottom: '32px',
+              right: '32px',
+              time: '0.5s',
+              mixColor: '#fff',
+              backgroundColor: '#121212',
+              buttonColorDark: '#100f2c',
+              buttonColorLight: '#fff',
+              saveInCookies: true,
+              label: '🌓',
+              autoMatchOsTheme: true
+            };
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+          });
+        </script>
     </body>
 </html>
