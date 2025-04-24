@@ -1,6 +1,6 @@
-místo forms zatím discord
+OK	místo forms zatím discord
 motivace JH23 k o-nás???
-prohodit JH a MM a DN nakonec
+OK	prohodit JH a MM a DN nakonec
 
 
 OK	talentovaných -> aktivních
@@ -16,14 +16,14 @@ OK	Kdo jsme
 OK	tlačítklo aby šlo o-nas
 Honza dodělá text
 
-Potebujeme tě
-jiný button 
+	Potebujeme tě
+AsiOK	jiný button 
 
-OK	Máš co říc
+	Máš co říct
 jiný button
 OK	pod to potřebujeme tě
 
-Podpořte nás
+	Podpořte nás
 button -> nějak směřovat na mail "organizatoriězv.cz"¨
 
 	partněři
@@ -32,7 +32,7 @@ dodělat na vedlejších stránkách
 
 	PLZEN
 POMOC	lepší fotka než senioři (Randík :[ )
-button Přednášej u nás -> nějaký formulář na zaregistrování ať ti nic neuteče -> posílání mailu o akcích
+ZATIMOK	button Přednášej u nás -> nějaký formulář na zaregistrování ať ti nic neuteče -> posílání mailu o akcích
 OK	3 akce
 OK	650+ účastníků
 OK	31 přednášejících
@@ -42,8 +42,8 @@ ASIOK	VĚTŠÍ PÍSMO +2b
 NAPSAT		ohlédnutí JH HO
 
 	ohlédnutí 24
-FAKT		moc velká mezera
-NAPSAT		partnery přidat
+FAKT	moc velká mezera
+NAPSAT	partnery přidat
 
 	BRNO
 	nechat
@@ -53,11 +53,13 @@ NAPSAT		to samé jak plzeň ale mezi čísla a Ohlédnutí přidat program a pro
 NAPSAT		stránka co se pojí s častí - je jídlo neneosit zbraně jak se oblíct...
 NAPSAT		tlačítko přijď na akci na gforms
 
-ŘEČNÍCI
-dát i plzeňské (ale neprvní plzen)
+potřebuju tam moci dát jiné tlačítko na join us
+
+	ŘEČNÍCI
+PETR	dát i plzeňské (ale neprvní plzen)
 
 	O NÁS
 JH projde pozmění
 
 	KONTAKT
-abmasador
+OK	abmasador
